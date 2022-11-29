@@ -1,6 +1,7 @@
 from scipy.stats import sem
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 import numpy as np
 
 

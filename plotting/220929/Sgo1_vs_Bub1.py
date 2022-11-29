@@ -1,6 +1,7 @@
 import pandas as pd
 from scipy.stats import sem
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 import numpy as np
 
 file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/1_Image analysis/220929_Sgo1-EGFP_in_met-Scc1/data.xlsx'
@@ -40,7 +41,7 @@ ax2 = ax.twinx()
 # make a plot with different y-axis using second axis object
 ax2.plot(x, sgo1, '-o', color='tab:orange')
 ax2.set_ylabel(r'% Cells with Sgo1-EGFP dot(s)', color='tab:orange')
-ax2.set_yticks(np.arange(0, 1.2, step=0.2), ('0%', '20%', '40%', '60%', '80%', '100%'))
+ax2.set_yticks(np.arange(0, 1.2, step=0.2), ('0', '20', '40', '60', '80', '100'))
 ax2.spines['left'].set_color('tab:blue')
 ax2.spines['right'].set_color('tab:orange')
 ax2.tick_params(axis='y', colors='tab:orange')

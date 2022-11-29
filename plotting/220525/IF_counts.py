@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 import pandas as pd
 import numpy as np
 
@@ -13,7 +14,7 @@ plt.xticks(xticks)
 # plt.xlabel(r'time after $\alpha$ factor washout (min)')
 plt.xlabel(r'time after G1 release (min)')
 plt.ylabel('% Cells')
-plt.yticks(np.arange(0, 120, step=20), ('0%', '20%', '40%', '60%', '80%', '100%'))
+# plt.yticks(np.arange(0, 120, step=20), ('0%', '20%', '40%', '60%', '80%', '100%'))
 plt.ylim (-5, 105)
 plt.legend()
 plt.show()

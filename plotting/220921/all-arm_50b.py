@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 import math
 import numpy as np
 
@@ -40,7 +41,7 @@ plt.plot(x, no_tension_means_log2, label='no tension')
 plt.fill_between(x, tension_lower_log2, tension_upper_log2, color='tab:blue', alpha=.1)
 plt.fill_between(x, no_tension_lower_log2, no_tension_upper_log2, color='tab:orange', alpha=.1)
 plt.xlabel('distance (kb)')
-plt.ylabel(r'log$_{2}$ mean calibrated RPM')
+plt.ylabel(r'log$_{2}$ (mean calibrated RPM)')
 plt.title('Chromosome arm')
 plt.ylim(2, 13)
 plt.legend()

@@ -1,13 +1,11 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-plt.rcParams['savefig.dpi'] = 300
-import seaborn as sns
+import scipy.stats
+import numpy as np
 
 file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/1_Image analysis/220126_Bub1 vs peri-CEN boarder/quantification.xlsx'
 df = pd.read_excel(file_name, sheet_name=0)
 df_1 = df.copy()
-
-
+# verify l1 and l2
 for cell in range(len(df['cell'].unique())):
     for time in range(len(df['time'].unique())):
         selection1 = df[(df['cell']==cell+1)&(df['time']==time+1)&(df['l']==1)]['distance']
@@ -20,34 +18,37 @@ for cell in range(len(df['cell'].unique())):
             df_1.iloc[row1, 3] = l2
             df_1.iloc[row2, 3] = l1
 
-# plot interKT > 0
-# df = df_1
-# for i in range(len(df['cell'].unique())):
-#     bub1_d = df[(df['cell'] == i+1)&(df['l'] == 0)]['distance']
-#     l1 = df[(df['cell'] == i+1)&(df['l'] == 1)]['distance']
-#     l2 = df[(df['cell'] == i+1)&(df['l'] == 2)]['distance']
-#     plt.plot(bub1_d[list(bub1_d != 0)], l1[list(bub1_d != 0)], '.', color='tab:blue')
-#     plt.plot(bub1_d[list(bub1_d != 0)], l2[list(bub1_d != 0)], '.', color='tab:orange')
-#
-# plt.ylim(-0.05, 1.305)
-# plt.xlabel(r'distance$_{interKT}$ ($\mu$m)')
-# plt.yticks([])
-# plt.show()
-
-# plot interKT = 0
+# make lists for l1 and l2
 df = df_1
-res = []
+l1_ls = []
+l2_ls = []
+l_ls = []
 for i in range(len(df['cell'].unique())):
     bub1_d = df[(df['cell'] == i+1)&(df['l'] == 0)]['distance']
     l1 = df[(df['cell'] == i+1)&(df['l'] == 1)]['distance']
+    for x in l1[list(bub1_d != 0)].to_numpy():
+        if x > 0:
+            l1_ls.append(x)
     l2 = df[(df['cell'] == i+1)&(df['l'] == 2)]['distance']
-    for j in l1[list(bub1_d == 0)]:
-        res.append(j)
-ax = sns.swarmplot([0]*len(res), res, color='tab:green')
-plt.xlim(-0.1, 0.1)
-plt.ylim(-0.05, 1.305)
-plt.xlabel(r'0')
-plt.xticks([])
-plt.ylabel(r'distance$_{Bub1\,to\,periCEN\,border}$ ($\mu$m)')
+    for x in l2[list(bub1_d != 0)].to_numpy():
+        if x > 0:
+            l2_ls.append(x)
+    for x in l1[list(bub1_d == 0)]:
+        l_ls.append(x)
 
-plt.show()
+print(l1_ls)
+print(scipy.stats.describe(l1_ls))
+print(np.median(l1_ls))
+print(l2_ls)
+print(scipy.stats.describe(l2_ls))
+print(np.median(l2_ls))
+print(l_ls)
+print(scipy.stats.describe(l_ls))
+print(np.median(l_ls))
+l1l2_ls = l1_ls + l2_ls
+print(l1l2_ls)
+print(scipy.stats.describe(l1l2_ls))
+print(np.median(l1l2_ls))
+# print(l1_ls)
+# print(l2_ls)
+# print(l_ls)

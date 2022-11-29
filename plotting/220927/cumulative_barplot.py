@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 import pandas as pd
 
 file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/1_ChIP_data_analysis/070922_pH2A ChIP-seq_00/data/Cen_vs_non-Cen_ratio.xlsx'

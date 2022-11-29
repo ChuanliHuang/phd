@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 import math
 import numpy as np
 

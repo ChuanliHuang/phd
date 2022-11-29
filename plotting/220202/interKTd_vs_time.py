@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 
 file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/1_Image analysis/220124_Bub1-mNG_Mtw1-td/quantification.xlsx'
 df = pd.read_excel(file_name, sheet_name=0)

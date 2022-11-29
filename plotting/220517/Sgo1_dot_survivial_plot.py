@@ -1,9 +1,10 @@
 from lifelines import KaplanMeierFitter
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 import numpy as np
 
-file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/0_Image analysis/NAA_PI_1_quantification/data.xlsx'
+file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/1_Image analysis/NAA_PI_1_quantification/data.xlsx'
 # names = ['-NAA -PIs', '-NAA +PIs', '+NAA -PIs', '+NAA +PIs']
 names = ['- NAA', '-NAA +PIs', '+NAA', '+NAA +PIs']
 
@@ -42,7 +43,7 @@ for i in [0, 2]:
     kmf.plot_survival_function(label=names[i])
 
 # plt.xticks(np.arange(0, 80, step=10), ('0', '10', '20', '30', '40', '50', '60', '>60'))
-plt.yticks(np.arange(0, 1.2, step=0.2), ('0%', '20%', '40%', '60%', '80%', '100%'))
+plt.yticks(np.arange(0, 1.2, step=0.2), ('0', '20', '40', '60', '80', '100'))
 plt.xlabel(r'time after drug addition (min)')
 plt.ylabel(r'% Cells with Sgo1-EGFP dot(s)')
 plt.show()

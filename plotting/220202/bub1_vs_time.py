@@ -19,5 +19,5 @@ for time in df['time'].unique():
 plt.plot(x, y, color='tab:green', linewidth=2, label='median')
 plt.legend()
 plt.xlabel(r'time after $\alpha$ factor washout (min)')
-plt.ylabel('GFP intensity (a.u.)')
+plt.ylabel('KT Bub1-mNG intensity (a.u.)')
 plt.show()
