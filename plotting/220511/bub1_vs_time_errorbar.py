@@ -38,7 +38,7 @@ for time in metscc1_df['time'].unique():
     yerrs.append(yerr)
     y.append(g_int_mean)
 
-plt.errorbar(x, y, yerr=yerrs, color='tab:orange', linewidth=2, label='pMET-SCC1')
+plt.errorbar(x, y, yerr=yerrs, color='tab:orange', linewidth=2, label=r'$pMET-SCC1$')
 
 
 plt.legend(loc=1)

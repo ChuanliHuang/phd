@@ -42,7 +42,7 @@ plt.fill_between(x, tension_lower_log2, tension_upper_log2, color='tab:blue', al
 plt.fill_between(x, no_tension_lower_log2, no_tension_upper_log2, color='tab:orange', alpha=.1)
 plt.xlabel('distance (kb)')
 plt.ylabel(r'log$_{2}$ (mean calibrated RPM)')
-plt.title('Chromosome arm')
+plt.title('Chromosome arms pile-up')
 plt.ylim(2, 13)
 plt.legend()
 plt.show()

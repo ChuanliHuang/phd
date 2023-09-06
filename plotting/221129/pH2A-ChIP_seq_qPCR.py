@@ -5,7 +5,7 @@ plt.rcParams['savefig.dpi'] = 300
 
 sns.set_theme(style="whitegrid")
 file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/1_ChIP_data_analysis/070922_pH2A ChIP-seq_00/data/qPCR.xlsx'
-df = pd.read_excel(file_name, sheet_name=2)
+df = pd.read_excel(file_name, sheet_name=1)
 print(df)
 
 g = sns.catplot(

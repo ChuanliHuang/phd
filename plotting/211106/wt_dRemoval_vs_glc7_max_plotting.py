@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 from statannot import add_stat_annotation
 
 
@@ -16,7 +17,7 @@ ax = sns.pointplot(x="type", y="value", data=df, estimator=np.mean, ci=None, joi
 plt.setp(ax.lines, zorder=100)
 plt.setp(ax.collections, zorder=100)
 plt.setp(ax.collections[-1], label='mean')
-ax.set(ylabel=r"$Sgo1_{peri-CEN}$ (min)")
+# ax.set(ylabel=r"$Sgo1_{peri-CEN}$ (min)")
 
 
 add_stat_annotation(ax, data=df, x='type', y='value',

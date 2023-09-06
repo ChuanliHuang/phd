@@ -1,12 +1,13 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 import numpy as np
 from statannot import add_stat_annotation
 
 
 # sns.set(style='whitegrid')
-file_name = '/Users/kikawaryoku/Desktop/data.xlsx'
+file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/1_Image analysis/211105_Sgo1-EGFP_glc7-12_34C_quantification/data.xlsx'
 df = pd.read_excel(file_name, sheet_name=0)
 # fig, ax = plt.subplots(figsize=(16, 4.8))
 ax = sns.swarmplot(x="strain", y="sum", data=df, color='green', size=2)

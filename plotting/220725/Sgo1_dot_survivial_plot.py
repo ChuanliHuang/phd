@@ -1,9 +1,10 @@
 from lifelines import KaplanMeierFitter
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 import numpy as np
 
-file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/0_Image analysis/220722_Bub1-3V5-AID_glc7-12/quantification.xlsx'
+file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/1_Image analysis/220722_Bub1-3V5-AID_glc7-12/quantification.xlsx'
 names = ['- NAA', '+NAA']
 
 

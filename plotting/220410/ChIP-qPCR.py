@@ -1,9 +1,10 @@
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.rcParams['savefig.dpi'] = 300
 sns.set_theme(style="whitegrid")
 
-file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/3_ChIP_data_analysis/060422 Sgo1-6HA ChIP in hta1 mutants/summary.xlsx'
+file_name = '/Users/kikawaryoku/Library/CloudStorage/OneDrive-UniversityofEdinburgh/shugoshin/1_ChIP_data_analysis/060422 Sgo1-6HA ChIP in hta1 mutants/summary.xlsx'
 df = pd.read_excel(file_name, sheet_name=0)
 # df = df[df['repeat'] == 3]
 g = sns.catplot(x="strain", y="%INPUT", ci='sd',

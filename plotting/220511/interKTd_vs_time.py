@@ -35,7 +35,7 @@ for time in metscc1_df['time'].unique():
     x.append(time * 15)
     g_int_median = metscc1_df[selection]['r_distance'].median()
     y.append(g_int_median)
-plt.plot(x, y, color='tab:orange', linewidth=2, label='pMET-SCC1')
+plt.plot(x, y, color='tab:orange', linewidth=2, label=r'$pMET-SCC1$')
 
 plt.legend(loc=1)
 plt.xlabel(r'time after release from G1 (min)')
